@@ -1,0 +1,33 @@
+name: who_is_spy_flutter
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  provider: ^6.0.0
+  cupertino_icons: ^1.0.2
+  numberpicker: ^2.1.1
+  flutter_svg: ^0.22.0
+  flutter_swipable: ^1.2.1
+  flip_card: ^0.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/locations.json
+    - assets/images/
+
