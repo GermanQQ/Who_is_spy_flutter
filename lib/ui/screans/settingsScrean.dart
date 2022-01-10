@@ -10,7 +10,7 @@ class SettingsScrean extends StatelessWidget {
     return DefaultPage(
       body: SettingsWidget(),
       title: Text(
-        'Setting',
+        'Настройки',
         style: titleTextStyle(context),
       ),
       isBack: true,

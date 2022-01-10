@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:who_is_spy_flutter/ui/screans/timerScrean.dart';
+import 'package:who_is_spy_flutter/ui/screans/startGameScrean.dart';
 import 'package:who_is_spy_flutter/untils/untils.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -32,7 +32,7 @@ class StartWidget extends StatelessWidget {
                 height: height * 0.065,
                 child: Center(
                     child: Text(
-                  'Start',
+                  'Старт',
                   style: buttonTextStyle(context),
                 ))),
           ),

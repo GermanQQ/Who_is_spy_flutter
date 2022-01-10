@@ -3,11 +3,13 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:who_is_spy_flutter/data/models/models.dart';
 
 class Repository with ChangeNotifier {
-  List locations = [];
+  List<RullesData> rulesList;
+  List<String> locations;
+  Repository({required this.rulesList, required this.locations});
+
   String randomLocation = '';
   int players = 3;
   int spyQty = 1;
@@ -18,11 +20,6 @@ class Repository with ChangeNotifier {
   bool flipCart = false;
   Timer? timer;
   TimerModel? timerData;
-
-  Future<void> getStartLocations() async {
-    final jsonString = await rootBundle.loadString('assets/locations.json');
-    locations = jsonDecode(jsonString)['startLocations'];
-  }
 
   void changeSettingQty(SettingButtonEmun buttonPressed, int number) {
     switch (buttonPressed) {

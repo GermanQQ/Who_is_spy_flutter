@@ -1,11 +1,21 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:who_is_spy_flutter/data/repository.dart';
+import 'data/models/models.dart';
 import 'ui/screans/homeScrean.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(ChangeNotifierProvider(create: (context) => Repository(), child: MyApp()));
+  final jsonString = await rootBundle.loadString('assets/locations.json');
+  final initialData = jsonDecode(jsonString);
+  final List rules = initialData['rules'].map((e) => RullesData(text: e['text'], image: e['image'])).toList();
+  final List locations = initialData['locations'];
+  runApp(ChangeNotifierProvider(
+      create: (context) => Repository(rulesList: rules as List<RullesData>, locations: locations as List<String>),
+      child: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -16,7 +26,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    Provider.of<Repository>(context, listen: false).getStartLocations();
     super.initState();
   }
 

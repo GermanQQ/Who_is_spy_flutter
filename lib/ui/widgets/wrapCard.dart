@@ -66,7 +66,7 @@ class CardWidget extends StatelessWidget {
               elevation: 5,
               child: Center(
                 child: Text(
-                  isSpy ? 'You are spy!' : model.randomLocation,
+                  isSpy ? 'Ты шпион!' : model.randomLocation,
                   style: titleTextStyle(context, color: isSpy ? Colors.red : Colors.white),
                 ),
               ),
@@ -79,7 +79,7 @@ class CardWidget extends StatelessWidget {
               ),
               elevation: 5,
               child: Center(
-                child: Text('Player $currentPlayer',
+                child: Text('Игрок $currentPlayer',
                     style: titleTextStyle(
                       context,
                     )),

@@ -3,18 +3,17 @@ import 'package:provider/provider.dart';
 import 'package:who_is_spy_flutter/data/repository.dart';
 import 'package:who_is_spy_flutter/ui/screans/settingsScrean.dart';
 import 'package:who_is_spy_flutter/ui/widgets/widgets.dart';
+import 'package:who_is_spy_flutter/untils/untils.dart';
 
 class HomeScrean extends StatelessWidget {
   const HomeScrean({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<Repository>(context, listen: false);
-
     return DefaultPage(
       leading: IconButton(
           onPressed: () {
-            print(provider.locations);
+            showDialog(context: context, builder: (_) => RullesWidget());
           },
           icon: Icon(Icons.menu_book)),
       actions: [
@@ -33,7 +32,7 @@ class HomeScrean extends StatelessWidget {
             children: [
               Consumer<Repository>(builder: (context, model, child) => Text(model.spyQty.toString())),
               SizedBox(width: 4),
-              Icon(Icons.spa),
+              Icon(CustomIco.spy),
             ],
           ),
           SizedBox(width: 12),

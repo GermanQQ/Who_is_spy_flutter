@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:who_is_spy_flutter/data/repository.dart';
+import 'package:who_is_spy_flutter/untils/untils.dart';
 
 enum SettingButtonEmun { spy, players, timer, location }
 
@@ -15,13 +16,14 @@ class SettingButtonModel {
 SettingButtonModel getSettingButtom(SettingButtonEmun type, Repository provider) {
   switch (type) {
     case SettingButtonEmun.spy:
-      return SettingButtonModel(title: 'Spy count', count: provider.spyQty, icon: Icons.spa, type: type);
+      return SettingButtonModel(title: 'Количество шпионов', count: provider.spyQty, icon: CustomIco.spy, type: type);
     case SettingButtonEmun.players:
-      return SettingButtonModel(title: 'Players', count: provider.players, icon: Icons.people_alt_outlined, type: type);
+      return SettingButtonModel(
+          title: 'Количество игроков', count: provider.players, icon: Icons.people_alt_outlined, type: type);
     case SettingButtonEmun.timer:
-      return SettingButtonModel(title: 'Minutes', count: provider.minutes, icon: Icons.timer, type: type);
+      return SettingButtonModel(title: 'Длительность игры', count: provider.minutes, icon: Icons.timer, type: type);
     case SettingButtonEmun.location:
-      return SettingButtonModel(title: 'Locations', icon: Icons.gps_fixed, type: type);
+      return SettingButtonModel(title: 'Локации', icon: Icons.gps_fixed, type: type);
     default:
       return SettingButtonModel(title: 'no', icon: Icons.ac_unit, type: type);
   }

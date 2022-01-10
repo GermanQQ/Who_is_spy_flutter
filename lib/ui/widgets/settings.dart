@@ -91,7 +91,7 @@ class SettingShowDialog extends StatelessWidget {
         return Container(
           width: width * 0.9,
           height: 180,
-          decoration: BoxDecoration(color: Colors.deepPurple[600], borderRadius: BorderRadius.all(Radius.circular(10))),
+          decoration: BoxDecoration(color: Colors.deepPurple[600], borderRadius: BorderRadius.circular(10)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -104,8 +104,7 @@ class SettingShowDialog extends StatelessWidget {
                 onChanged: (value) => provider.changeSettingQty(b.type, value),
                 axis: Axis.horizontal,
                 decoration: BoxDecoration(
-                    color: Colors.deepPurple[700]!.withOpacity(0.5),
-                    borderRadius: BorderRadius.all(Radius.circular(10))),
+                    color: Colors.deepPurple[700]!.withOpacity(0.5), borderRadius: BorderRadius.circular(10)),
                 itemWidth: 80,
               ),
               Container(

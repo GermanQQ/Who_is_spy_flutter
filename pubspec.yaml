@@ -18,6 +18,7 @@ dependencies:
   flutter_svg: ^0.22.0
   flutter_swipable: ^1.2.1
   flip_card: ^0.6.0
+  carousel_slider: ^4.0.0
 
 dev_dependencies:
   flutter_test:
@@ -26,6 +27,11 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+  
+  fonts:
+    - family: CustomIco 
+      fonts:
+        - asset: assets/fonts/CustomIco.ttf 
 
   assets:
     - assets/locations.json
