@@ -13,9 +13,8 @@ void main() async {
   final initialData = jsonDecode(jsonString);
   final List rules = initialData['rules'].map((e) => RullesData(text: e['text'], image: e['image'])).toList();
   final List locations = initialData['locations'];
-  runApp(ChangeNotifierProvider(
-      create: (context) => Repository(rulesList: rules as List<RullesData>, locations: locations as List<String>),
-      child: MyApp()));
+  runApp(
+      ChangeNotifierProvider(create: (context) => Repository(rulesList: rules, locations: locations), child: MyApp()));
 }
 
 class MyApp extends StatefulWidget {

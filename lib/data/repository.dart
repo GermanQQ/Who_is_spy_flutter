@@ -1,13 +1,12 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:who_is_spy_flutter/data/models/models.dart';
 
 class Repository with ChangeNotifier {
-  List<RullesData> rulesList;
-  List<String> locations;
+  List rulesList;
+  List locations;
   Repository({required this.rulesList, required this.locations});
 
   String randomLocation = '';
